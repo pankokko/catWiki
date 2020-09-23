@@ -41,11 +41,11 @@ export default {
     StatusLevel
   },
   async asyncData( context ){
-    const breed_id  = context.query.breed_id
+    const { breed_id }  = context.query
     const response = await axios.get(`https://api.thecatapi.com/v1/images/search?breed_id=${breed_id}&limit=7`,
     {headers: { "x-api-key": 'c695ae68-432c-4c93-a1d7-a0b0b857c289' }})
     const { data } = response
-    const  breed = data[0].breeds[0]
+    const [ breed = null ]= data[0].breeds
     if(breed){
       let images = ''
       images = data.slice(1, 7)
