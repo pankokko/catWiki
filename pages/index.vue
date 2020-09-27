@@ -19,7 +19,6 @@
         </b-field>
     </div>
   </div>
-  {{ newPuiyu }}
   <div>
   </div>
 </section>
@@ -27,6 +26,7 @@
 <script>
 import axios from 'axios'
 export default {
+
   async asyncData() {
     const response = await axios.get("https://api.thecatapi.com/v1/breeds", 
     {headers: { "x-api-key": 'c695ae68-432c-4c93-a1d7-a0b0b857c289' }}
